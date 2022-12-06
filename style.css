@@ -1,0 +1,98 @@
+body {
+    background-color: black;
+}
+
+.cal {
+    background-color: rgba(0, 255, 0, 0.3);
+    width: 300px;
+    height: 400px;
+    border: 10px solid gray;
+    padding: 10px;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0.3);
+}
+
+.console {
+    background-color: aqua;
+    box-shadow: 0 0 2px 2px aqua;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 250px;
+    height: 50px;
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    padding: 3px;
+}
+
+.grid-input {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 50px;
+    grid-gap: 5px;
+    width: 250px;
+    margin: auto;
+}
+
+.data, 
+.clear, 
+.delete,
+.minus, 
+.add, 
+.div, 
+.multi, 
+.equal {
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+
+.data:hover, 
+.clear:hover, 
+.delete:hover,
+.minus:hover, 
+.add:hover, 
+.div:hover, 
+.multi:hover, 
+.equal:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+
+.data,
+.minus, 
+.add, 
+.div, 
+.multi, 
+.equal {
+    width: 35px;
+}
+
+.clear, .delete {
+    width: 100px;
+}
+
+
+
+.clear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.delete {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
