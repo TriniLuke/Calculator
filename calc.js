@@ -1,3 +1,4 @@
+//created a calculator object with methods/functions
 class Calculator {
 
     constructor(previousOperandText, currentOperandText) {
@@ -31,32 +32,6 @@ class Calculator {
         this.currentOperand = ''
     }
 
-    compute() {
-        let calculation
-        const previous = parseFloat(this.previousOperand)
-        const current = parseFloat(this.currentOperand)
-        if(isNaN(previous) || isNaN(current)) return
-        switch (this.operation) {
-            case '+' : 
-            calculation = previous + current
-            break
-            case '-' : 
-            calculation = previous - current
-            break
-            case '*' : 
-            calculation = previous * current
-            break
-            case '÷' : 
-            calculation = previous / current
-            break
-            default : 
-            return;
-        }
-        this.currentOperand = calculation
-        this.operation = undefined
-        this.previousOperand = ''
-    }
-
     getDisplayNumber(number) {
         const stringNumber = number.toString()
         const integerNum = parseFloat(stringNumber.split('.') [0])
@@ -82,8 +57,35 @@ class Calculator {
             this.previousOperandText.textContent = ''
         }
     }
+
+    compute() {
+        let calculation
+        const previous = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if(isNaN(previous) || isNaN(current)) return
+        switch (this.operation) {
+            case '+' : 
+            calculation = previous + current
+            break
+            case '-' : 
+            calculation = previous - current
+            break
+            case '*' : 
+            calculation = previous * current
+            break
+            case '÷' : 
+            calculation = previous / current
+            break
+            default : 
+            return;
+        }
+        this.currentOperand = calculation
+        this.operation = undefined
+        this.previousOperand = ''
+    }
 }
 
+//called DOM documents
 const display = document.querySelector('#display');
 const equal = document.querySelector('.equal');
 const numbers = document.querySelectorAll('.num');
@@ -93,8 +95,10 @@ const clear = document.querySelector('.clear');
 const previousOperandText = document.querySelector('.firstOperand');
 const currentOperandText = document.querySelector('.secondOperand');
 
+//create a new calculator from the Calculator object
 const calculator = new Calculator(previousOperandText, currentOperandText);
 
+//added funtions to the button while calling on Oject Methods from Calculator class
 numbers.forEach(number => {
     number.addEventListener('click', () => {
         calculator.appendNumber(number.textContent);
